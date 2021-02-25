@@ -73,6 +73,7 @@ buildings256 = Hyperparams()
 buildings256.update(i64)
 buildings256.n_batch = 1
 buildings256.lr = 0.00010
+buildings256.width = 256
 buildings256.dataset = 'buildings256'
 buildings256.epochs_per_eval = 1
 buildings256.epochs_per_eval_save = 1
