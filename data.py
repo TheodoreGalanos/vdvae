@@ -147,6 +147,14 @@ def ffhq256(data_root):
     # we did not significantly tune hyperparameters on ffhq-256, and so simply evaluate on the test set
     return train, valid, valid
 
+def buildings256(data_root):
+    trX = np.load(os.path.join(data_root, 'buildings256.npy'), mmap_mode='r')
+    np.random.seed(5)
+    tr_va_split_indices = np.random.permutation(trX.shape[0])
+    train = trX[tr_va_split_indices[:-2000]]
+    valid = trX[tr_va_split_indices[-2000:]]
+    # we did not significantly tune hyperparameters on ffhq-256, and so simply evaluate on the test set
+    return train, valid, valid
 
 def cifar10(data_root, one_hot=True):
     tr_data = [unpickle_cifar10(os.path.join(data_root, 'cifar-10-batches-py/', 'data_batch_%d' % i)) for i in range(1, 6)]
