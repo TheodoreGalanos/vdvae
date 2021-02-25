@@ -12,6 +12,7 @@ class Hyperparams(dict):
         self[attr] = value
 
 
+        
 cifar10 = Hyperparams()
 cifar10.width = 384
 cifar10.lr = 0.0002
@@ -68,6 +69,22 @@ ffhq_256.grad_clip = 130.
 ffhq_256.skip_threshold = 180.
 HPARAMS_REGISTRY['ffhq256'] = ffhq_256
 
+buildings256 = Hyperparams()
+buildings256.update(i64)
+buildings256.n_batch = 1
+buildings256.lr = 0.00010
+buildings256.dataset = 'buildings256'
+buildings256.epochs_per_eval = 1
+buildings256.epochs_per_eval_save = 1
+buildings256.num_images_visualize = 2
+buildings256.num_variables_visualize = 3
+buildings256.num_temperatures_visualize = 1
+buildings256.dec_blocks = "1x2,4m1,4x3,8m4,8x4,16m8,16x9,32m16,32x21,64m32,64x13,128m64,128x7,256m128"
+buildings256.enc_blocks = "256x3,256d2,128x8,128d2,64x12,64d2,32x17,32d2,16x7,16d2,8x5,8d2,4x5,4d4,1x4"
+buildings256.no_bias_above = 64
+buildings256.grad_clip = 130.
+buildings256.skip_threshold = 180.
+HPARAMS_REGISTRY['buildings256'] = buildings256
 
 ffhq1024 = Hyperparams()
 ffhq1024.update(ffhq_256)
