@@ -29,6 +29,12 @@ def set_up_data(H):
         H.image_channels = 3
         shift = -112.8666757481
         scale = 1. / 69.84780273
+    elif H.dataset == 'buildings256':
+        trX, vaX, teX = buildings256(H.data_root)
+        H.image_size = 256
+        H.image_channels = 3
+        shift = -112.8666757481
+        scale = 1. / 69.84780273
     elif H.dataset == 'ffhq_1024':
         trX, vaX, teX = ffhq1024(H.data_root)
         H.image_size = 1024
