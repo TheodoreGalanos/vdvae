@@ -75,6 +75,7 @@ buildings256.n_batch = 1
 buildings256.lr = 0.00010
 buildings256.width = 256
 buildings256.dataset = 'buildings256'
+buildings256.data_root = '/content/vdvae'
 buildings256.epochs_per_eval = 1
 buildings256.epochs_per_eval_save = 1
 buildings256.num_images_visualize = 2
