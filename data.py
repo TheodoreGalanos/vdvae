@@ -148,7 +148,7 @@ def ffhq256(data_root):
     return train, valid, valid
 
 def buildings256(data_root):
-    trX = np.load(os.path.join(data_root, 'buildings256.npy'), mmap_mode='r')
+    trX = np.load(os.path.join(data_root, 'buildings_256.npy'), mmap_mode='r')
     np.random.seed(5)
     tr_va_split_indices = np.random.permutation(trX.shape[0])
     train = trX[tr_va_split_indices[:-2000]]
